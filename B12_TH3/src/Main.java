@@ -1,15 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+            Student student = new Student("Kien", 30, "HT");
+            Student student1 = new Student("Nam", 26, "HN");
+            Student student2 = new Student("Anh", 38, "HT" );
+            Student student3 = new Student("Tung", 38, "HT" );
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+            List<Student> lists = new ArrayList<Student>();
+            lists.add(student);
+            lists.add(student1);
+            lists.add(student2);
+            lists.add(student3);
+            Collections.sort(lists);
+            for(Student st : lists){
+                System.out.println(st.toString());
+            }
+
+            AgeComparator ageComparator = new AgeComparator();
+            Collections.sort(lists,ageComparator);
+            System.out.println("So sanh theo tuoi:");
+            for(Student st : lists){
+                System.out.println(st.toString());
+            }
     }
 }
